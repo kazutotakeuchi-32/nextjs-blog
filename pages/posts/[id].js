@@ -5,7 +5,7 @@ import Head from "next/head"
 import utilStyles from "../../styles/utils.module.css";
 
 export async function getStaticPaths() {
-  const paths = getAllPostIds()
+  const paths = await getAllPostIds()
   return {
     paths,
     fallback: false
@@ -37,7 +37,6 @@ export default function Post({postData}) {
         </div>
         <div dangerouslySetInnerHTML={{ __html: postData.contentHtml }} />
     </article>
-      <div dangerouslySetInnerHTML={{__html: postData.contentHtml }} />
   </Layout>
   )
 }
