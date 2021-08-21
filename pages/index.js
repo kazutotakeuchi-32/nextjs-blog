@@ -1,9 +1,9 @@
 import Head from 'next/head'
-import Layout, { siteTitle } from '../../components/layout'
-import { getSortedPostsData } from '../../lib/posts'
+import Layout, { siteTitle } from '../components/layout.js'
+import { getSortedPostsData } from '../lib/posts'
 import utilStyles from '../styles/utils.module.css'
 import Link from 'next/link'
-import Date from '../../components/date'
+import Date from '../components/date'
 
 export async function getServerSideProps() {
   const allPostsData = getSortedPostsData()
@@ -16,7 +16,7 @@ export async function getServerSideProps() {
 
 export default function Home({allPostsData}) {
   return (
-    <Layout home>
+    <Layout >
       <Head>
         <title>{siteTitle}</title>
       </Head>
